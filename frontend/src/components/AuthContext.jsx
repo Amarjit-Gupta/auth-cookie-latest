@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { base_url } from "../URL";
 
 
 const AuthContext = createContext(null);
@@ -11,7 +12,7 @@ const AuthProvider = ({ children }) => {
 
     const getAuthUserData = async () => {
         try {
-            let result = await fetch("http://localhost:4000/auth/isAuth", {
+            let result = await fetch(`${base_url}/auth/isAuth`, {
                 method: "get",
                 credentials: "include"
             });

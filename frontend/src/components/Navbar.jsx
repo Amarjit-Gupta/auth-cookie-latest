@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./authContext";
 import { useContext } from "react";
+import { base_url } from "../URL";
 
 const Navbar = () => {
 
@@ -10,7 +11,7 @@ const Navbar = () => {
 
     const handleLogout = async () => {
         try {
-            let result = await fetch("http://localhost:4000/auth/logout", {
+            let result = await fetch(`${base_url}/auth/logout`, {
                 method: "post",
                 credentials: "include",
                 headers: {

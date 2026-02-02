@@ -1,0 +1,1 @@
+export const base_url = "https://auth-cookie-latest.onrender.com";

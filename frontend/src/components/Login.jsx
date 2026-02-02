@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "./authContext";
+import { base_url } from "../URL";
 
 const Login = () => {
 
@@ -13,7 +14,9 @@ const Login = () => {
 
     const { isAuthenticated, setIsAuthenticated,getAuthUserData } = useContext(AuthContext)
 
-    if (isAuthenticated) return <Navigate to="/" />
+    if (isAuthenticated){
+        return <Navigate to="/" />;
+    }
 
     const handleChange = (event) => {
         setInputValue({ ...inputValue, [event.target.name]: event.target.value });
@@ -23,7 +26,7 @@ const Login = () => {
         event.preventDefault();
         // console.log(inputValue);
         try {
-            let result = await fetch("http://localhost:4000/auth/login", {
+            let result = await fetch(`${base_url}/auth/login`, {
                 method: "post",
                 credentials: "include",
                 body: JSON.stringify(inputValue),
@@ -36,7 +39,7 @@ const Login = () => {
             if (data.success) {
                 alert(data.message);
                 await getAuthUserData();
-                setIsAuthenticated(true);
+                // setIsAuthenticated(true);
                 navigate("/");
             }
             else {
