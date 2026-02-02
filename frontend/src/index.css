@@ -7,3 +7,8 @@
 .box input{width: 75%;height:100%;border: gray solid 1px;padding: 0px 3px 0px 3px;border-radius: 5px;font-size: 18px;}
 form{display: flex;flex-direction: column;gap:15px;}
 input[type="submit"]{width: 100%;padding: 5px;font-weight: bold;font-size: 18px;border-radius:5px;border: 1px gray solid;color: gray;}
+.navbar{height: 100px;width:100%;background-color: aqua;}
+ul{text-align: right;font-size:25px;}
+ul li{display:inline-block;padding: 35px;}
+.active{color:red;}
+li button{padding: 3px;font-weight: bold;cursor: pointer;}
