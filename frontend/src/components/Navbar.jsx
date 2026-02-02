@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "./authContext";
+import { AuthContext } from "./AuthContext";
 import { useContext } from "react";
 import { base_url } from "../URL";
 
